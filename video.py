@@ -1,11 +1,18 @@
+import os
+os.environ['IMAGEIO_FFMPEG_EXE'] = "ffmpeg"
+os.environ['IMAGEIO_NO_INTERNET'] = "1"
+
 from moviepy.editor import ImageSequenceClip
 import argparse
-import os
+
+#import imageio
+#imageio.plugins.ffmpeg.download()
 
 IMAGE_EXT = ['jpeg', 'gif', 'png', 'jpg']
 
 
-def main():
+
+def main():    
     parser = argparse.ArgumentParser(description='Create driving video.')
     parser.add_argument(
         'image_folder',
